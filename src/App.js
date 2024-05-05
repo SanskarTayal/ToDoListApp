@@ -1,10 +1,13 @@
 import "./styles.css";
-
+import ListOfTasks from "./ToDoList/ListOfTasks";
+import Header from "./Header/header";
 export default function App() {
   return (
+    <>
     <div className="Application">
-      <h1>Aye Captain! 🫡</h1>
-      <h2>Lets create something!</h2>
+      <Header />
+      <ListOfTasks />
     </div>
+    </>
   );
 }
