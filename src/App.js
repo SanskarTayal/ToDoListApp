@@ -1,6 +1,6 @@
 import "./styles.css";
-import ListOfTasks from "./ToDoList/ListOfTasks";
-import Header from "./Header/header";
+import ListOfTasks from "./Components/ListOfTasks"
+import Header from "./Components/header";
 export default function App() {
   return (
     <>
