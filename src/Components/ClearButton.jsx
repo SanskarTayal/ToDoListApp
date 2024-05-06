@@ -1,3 +1,3 @@
-export default function clearButton({click}){
-    return <button onClick={click}>Clear</button>
+export default function clearButton({click}) {
+    return <button onClick={click}>Remove Completed</button>
 }

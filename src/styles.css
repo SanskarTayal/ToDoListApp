@@ -25,7 +25,13 @@ body{
 .TaskList button{
   font-size: larger;
 }
-
+.TaskList li{
+  cursor: pointer;
+}
 .Italic {
   font-style: italic;
+}
+
+.Strike {
+  text-decoration: line-through;
 }
