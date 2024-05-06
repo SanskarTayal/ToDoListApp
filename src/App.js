@@ -6,7 +6,7 @@ export default function App() {
     <>
     <div className="Application">
       <Header />
-      <ListOfTasks />
+      <ListOfTasks/>
     </div>
     </>
   );

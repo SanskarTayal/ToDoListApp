@@ -21,3 +21,11 @@ body{
   margin-top: 10px;
   text-align: left;
 }
+
+.TaskList button{
+  font-size: larger;
+}
+
+.Italic {
+  font-style: italic;
+}
