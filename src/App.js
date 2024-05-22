@@ -1,13 +1,11 @@
 import "./styles.css";
-import ListOfTasks from "./Components/ListOfTasks"
-import Header from "./Components/header";
+import ListOfTasks from "./Components/ListOfTasks";
+import Header from "./Components/Header";
 export default function App() {
   return (
-    <>
-    <div className="Application">
+    <div className="application">
       <Header />
       <ListOfTasks/>
     </div>
-    </>
   );
 }

@@ -1,39 +1,37 @@
 import {useState} from "react";
-import ClearButton from "./ClearButton";
+
+import RemoveTaskButton from "./RemoveTaskButton";
 
 export default function ListOfTasks() {
-    const items = [{ToDoItem: "Read SpringBoot", IsCompleted: false},
-        {ToDoItem: "Complete assignments", IsCompleted: false},
-        {ToDoItem: "Sleep for 2 hours", IsCompleted: false},
-        {ToDoItem: "Take a shower", IsCompleted: false},
-        {ToDoItem: "Read SpringBoot", IsCompleted: false}];
+    const items = [{toDoItem: "Read SpringBoot", isCompleted: false},
+        {toDoItem: "Complete assignments", isCompleted: false},
+        {toDoItem: "Sleep for 2 hours", isCompleted: false},
+        {toDoItem: "Take a shower", isCompleted: false},
+        {toDoItem: "Read SpringBoot", isCompleted: false}];
 
     const [itemList, setItemList] = useState(items);
 
-    function clearHandler() {
-        const newList = itemList.slice();
-        const filteredList = newList.filter((item) => {
-            return !item.IsCompleted
-        });
-        setItemList(filteredList);
+    function toggleRemovingStrikedTasks() {
+        setItemList(itemList.slice().filter((item) =>  !item.isCompleted));
+        
     }
 
-    function Completed(index) {
+    function toggleTaskCompletionStatus(index) {
         const newList = itemList.slice();
-        newList[index].IsCompleted = !newList[index].IsCompleted;
+        newList[index].isCompleted = !newList[index].isCompleted;
         setItemList(newList);
     }
 
-    return <div className="TaskList">
+    return <div className="task-list">
         <ul type='square'>
             {itemList.map((item, index) => {
-                if (item.IsCompleted === false)
-                    return <li onClick={() => (Completed(index))} key={index}>{item.ToDoItem}</li>
+                if (item.isCompleted === false)
+                    return <li onClick={() => (toggleTaskCompletionStatus(index))} key={index}>{item.toDoItem}</li>
                 else
-                    return <li className="Strike" onClick={() => (Completed(index))}
-                               key={index}>  {item.ToDoItem}   </li>
+                    return <li className="striked-item" onClick={() => (toggleTaskCompletionStatus(index))}
+                               key={index}>  {item.toDoItem}   </li>
             })}
         </ul>
-        < ClearButton click={clearHandler}/>
+        < RemoveTaskButton clearStrikedContent={toggleRemovingStrikedTasks}/>
     </div>
 }

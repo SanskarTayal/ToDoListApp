@@ -1,37 +1,37 @@
 body{
   background-color: beige;
 }
-.Application {
+.application {
   font-family: sans-serif;
   text-align: center;
 }
-.HeaderOfApplication h1{
+.application-header h1{
   text-decoration: underline;
+  font-style: italic;
+
 }
-.TaskList{
+.task-list{
   background-color: burlywood;
   margin-left: 10%;
   margin-right: 10%;
   border-top: 5px;
+  padding: 10px;
+  border: solid wheat;
+  border-radius: 20px;
 }
 
-.TaskList li{
+.task-list li{
   font-size: medium;
   margin-bottom: 10px;
   margin-top: 10px;
   text-align: left;
-}
-
-.TaskList button{
-  font-size: larger;
-}
-.TaskList li{
   cursor: pointer;
 }
-.Italic {
-  font-style: italic;
+
+.task-list button{
+  font-size: larger;
 }
 
-.Strike {
+.striked-item {
   text-decoration: line-through;
 }
